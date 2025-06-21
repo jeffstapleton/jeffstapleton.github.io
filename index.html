@@ -200,6 +200,80 @@
             border-width: 2px;
             border-color: #333;
         }
+
+         /* Responsive adjustments for screens smaller than 769px (typical tablet/mobile breakpoint) */
+         @media (max-width: 768px) {
+            body {
+                padding: 10px; /* Reduce overall padding on smaller screens */
+            }
+
+            .container {
+                grid-template-columns: 1fr; /* Stack columns into a single column */
+                gap: 20px; /* Adjust gap between stacked sections */
+                box-shadow: none; /* Remove shadow for a cleaner mobile look */
+            }
+
+            .controls {
+                border-right: none; /* Remove right border */
+                border-bottom: 1px solid #e0e0e0; /* Add a bottom border to separate controls from preview */
+                padding: 20px; /* Adjust padding */
+            }
+
+            .preview-area {
+                padding: 20px; /* Adjust padding */
+                min-height: auto; /* Allow height to adjust naturally */
+            }
+
+            .control-group {
+                margin-bottom: 20px; /* Adjust spacing between control groups */
+            }
+
+            .control-group h3 {
+                margin-bottom: 8px; /* Adjust spacing below headers */
+            }
+
+            .color-grid {
+                grid-template-columns: repeat(4, 1fr); /* More columns for color options on mobile */
+                gap: 6px;
+            }
+
+            .bg-color-grid {
+                grid-template-columns: repeat(5, 1fr); /* More columns for background colors */
+                gap: 4px;
+            }
+
+            .layout-options {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Auto-fit layout buttons */
+            }
+
+            .logo-preview {
+                margin-bottom: 20px; /* Adjust margin below the preview box */
+                padding: 20px; /* Adjust padding inside the preview box */
+            }
+
+            #logoSVG {
+                max-width: 100%; /* Ensure SVG scales down within its container */
+                max-height: 250px; /* Set a max height to prevent it from getting too tall */
+                height: auto; /* Maintain aspect ratio */
+            }
+
+            .download-buttons {
+                grid-template-columns: repeat(2, 1fr); /* Two columns for download buttons */
+            }
+        }
+
+        /* Optional: Further adjustments for very small screens (e.g., iPhone SE) */
+        @media (max-width: 480px) {
+            .color-grid,
+            .bg-color-grid {
+                grid-template-columns: repeat(3, 1fr); /* Fewer columns if needed for very small screens */
+            }
+
+            .download-buttons {
+                grid-template-columns: 1fr; /* Stack download buttons vertically on very small screens */
+            }
+        }
+
     </style>
 </head>
 <body>
